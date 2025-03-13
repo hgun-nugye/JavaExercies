@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 import static java.lang.System.*;
@@ -15,11 +16,7 @@ public class Cau40 {
 
     public static int binarySearch(int[] list, int key) {
         Arrays.sort(list);
-        out.println("\nDanh sách đã sắp xếp là: ");
-        for(int i:list)
-        {
-            out.print(i+" ");
-        }
+
         int left = 0, right = list.length - 1;
         while (left <= right) {
             int mid = (right + left) / 2;
@@ -37,27 +34,39 @@ public class Cau40 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(in);
-        out.print("Nhập vào kích thước danh sách: ");
-        int n = sc.nextInt();
-        int[] list = new int[n];
-        out.println("Nhập vào danh sách các số: ");
-        for (int i = 0; i < n; i++) {
-            list[i] = sc.nextInt();
+        Random rd = new Random();
+        int[] list = new int[100000];
+
+        //tạo danh sách số ngẫu nhiên
+        for(int i=0; i<100000; i++)
+        {
+            list[i]=rd.nextInt();
         }
         int[] sortedList = Arrays.copyOf(list, list.length); // Tạo bản sao để tìm kiếm nhị phân
 
-        out.println("Nhập vào số cần tìm: ");
-        int num = sc.nextInt();
-        out.println("Dùng linear search: ");
-        if (linearSearch(list, num) != -1)
-            out.printf("Tìm thấy số %d ở vị trí %d", num, linearSearch(sortedList, num));
-        else out.printf("Không tìm thấy số %d", num);
+        //tạo số ngẫu nhiên cho tìm kiếm
+        int linum = rd.nextInt();
 
+        //linearSearch
+        out.println("Dùng linear search: ");
+        long be=System.currentTimeMillis();
+        int lisearch=linearSearch(list, linum);
+        if (lisearch!= -1)
+            out.printf("Tìm thấy số %d ở vị trí %d", linum, lisearch);
+        else out.printf("Không tìm thấy số %d trong dãy", linum);
+        long af=System.currentTimeMillis();
+        out.println("\nLinearSearch thực hiện trong " +(af-be) +" ms");
+
+        int binum = rd.nextInt();
+        //binarySearch
         out.println("\n\nDùng binay search: ");
-        int bisearch=binarySearch(list, num);
+        be=System.currentTimeMillis();
+        int bisearch = binarySearch(sortedList, binum);
         if (bisearch != -1)
-            out.printf("\nTìm thấy số %d ở vị trí %d", num, bisearch);
-        else out.printf("Không tìm thấy số %d", num);
+            out.printf("\nTìm thấy số %d ở vị trí %d", binum, bisearch);
+        else out.printf("Không tìm thấy số %d trong dãy", binum);
+        af=System.currentTimeMillis();
+        out.println("\nBinarySearch thực hiện trong " +(af-be) +" ms");
 
         sc.close();
     }
