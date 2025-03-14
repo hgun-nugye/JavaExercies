@@ -1,7 +1,5 @@
 import java.util.*;
 
-/*Viết chương trình cho phép nhập ba số nguyên từ bàn phím và lưu vào ba biến tương ứng là num1, num2, num3.
-Chương trình sẽ sắp xếp ba số đó theo thứ tự num1 <=  num2 <= num3 và xuất kết quả ra màn hình.*/
 public class Cau6 {
     public static void TangDan(int num1, int num2, int num3) {
         System.out.println("\nĐây là các số đã được sắp xếp tăng dần: ");

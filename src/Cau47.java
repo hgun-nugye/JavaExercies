@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Cau47 {
     public static String replace(String x, String y, String z) {
         if (x.contains(y)) {
-            x = x.replace(y, z);
+            x = x.replaceAll(y, z);
         }
         return x;
     }

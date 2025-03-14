@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Cau33 {
     public static boolean parlindrom(String str) {
         StringBuilder res = new StringBuilder(str);//res được khởi tạo chứa luôn strs
-        return str.equals(res.reverse().toString());
+        return str.contentEquals(res.reverse());
 
     }
 

@@ -17,8 +17,7 @@ public class Cau23 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhập vào một số cần đảo ngược: ");
         int n=sc.nextInt();
-        int n0=n;
-        System.out.printf("Số %d sau khi được đảo ngược là %d", n0, reverse(n));
+        System.out.printf("Số %d sau khi được đảo ngược là %d", n, reverse(n));
         sc.close();
     }
 }

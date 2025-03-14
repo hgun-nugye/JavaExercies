@@ -16,7 +16,7 @@ public class Cau15 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhập vào số cần chuyển đổi sang hệ 2: ");
         int n = sc.nextInt();
-        System.out.printf("Số %d được chuyển sang hệ 2 là %s",n,convertDecimalToBinary(n) );
+        System.out.printf("Số %d được chuyển sang hệ 2 là %s", n, convertDecimalToBinary(n));
         sc.close();
     }
 

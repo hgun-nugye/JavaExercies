@@ -1,4 +1,4 @@
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Cau35 {
     public static String sort(String s) {
@@ -25,7 +25,11 @@ public class Cau35 {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        System.out.println(isAnagram("silent", "listen"));
+        System.out.println(isAnagram("garden", "ranged"));
+        System.out.println(isAnagram("split", "lips"));
+
+        /*Scanner sc = new Scanner(System.in);
         System.out.println("Nhập vào chuỗi cần sắp xếp: ");
         String str1 = sc.nextLine();
         System.out.println("Chuỗi sau khi sắp xếp là: " + sort(str1));
@@ -36,6 +40,6 @@ public class Cau35 {
             System.out.println("Đây là 2 chuỗi anagram!");
         else
             System.out.println("Đây không phải 2 chuỗi anagram!");
-        sc.close();
+        sc.close();*/
     }
 }

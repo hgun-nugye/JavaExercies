@@ -37,8 +37,8 @@ public class Cau17 {
         Arrays.sort(dung, Comparator.comparingInt(o -> o[1]));
 
         System.out.println("Danh sách số câu trả lời đúng của sinh viên đã được sắp sếp là: ");
-        for (int i = 0; i < dung.length; i++) {
-            System.out.println("Thí sinh " + (dung[i][0] + 1) + ": " + dung[i][1] + " câu đúng");
+        for (int[] ints : dung) {
+            System.out.println("Thí sinh " + (ints[0] + 1) + ": " + ints[1] + " câu đúng");
         }
 
         sc.close(); // Close the scanner

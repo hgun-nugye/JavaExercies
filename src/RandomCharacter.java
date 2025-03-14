@@ -1,10 +1,7 @@
 import java.util.*;
 
 public class RandomCharacter {
-    /**
-     * -public static char getRandomCharacter() để trả lại một ký tự ngẫu nhiên.     *
-     * Viết chương trình để test lớp RandomCharacter ở trên: tạo 175 ký tự thường ngẫu nhiên và in ra màn hình, mỗi hàng 25 ký tự.
-     */
+
     public static char getRandomCharacter(char ch1, char ch2) {
         Random rd = new Random();
         return (char) ((char) (rd.nextInt(ch2 - ch1) + 1) + ch1);
@@ -20,25 +17,26 @@ public class RandomCharacter {
 
     public static char getRandomDigitCharacter() {
         Random rd = new Random();
-        return (char) ('0'+rd.nextInt(10));
+        return (char) ('0' + rd.nextInt(10));
     }
-    public static char getRandomCharacter(){
+
+    public static char getRandomCharacter() {
         Random rd = new Random();
-        return (char) ((char) rd.nextInt(126-32+1)+32);
+        return (char) ((char) rd.nextInt(126 - 32 + 1) + 32);
     }
 
     public static void main(String[] args) {
-        Scanner sc= new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         String str;
 
         System.out.println("Nhập vào giới hạn trái: ");
-        str=sc.nextLine();
-        char ch1=str.charAt(0);
+        str = sc.nextLine();
+        char ch1 = str.charAt(0);
         System.out.println("Nhập vào giới hạn phải: ");
-        str=sc.nextLine();
-        char ch2=str.charAt(0);
+        str = sc.nextLine();
+        char ch2 = str.charAt(0);
         System.out.print("Đây là kí tự ngẫu nhiên trong khoảng cho trước: ");
-        System.out.println(getRandomCharacter( ch1, ch2));
+        System.out.println(getRandomCharacter(ch1, ch2));
 
         System.out.print("\nĐây là kí tự viết thường ngẫu nhiên: ");
         System.out.println(getRandomLowerCaseLetter());
@@ -51,6 +49,6 @@ public class RandomCharacter {
 
         System.out.print("\nĐây là kí tự ngẫu nhiên được tạo: ");
         System.out.println(getRandomCharacter());
-
+        sc.close();
     }
 }
