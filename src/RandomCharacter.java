@@ -22,33 +22,29 @@ public class RandomCharacter {
 
     public static char getRandomCharacter() {
         Random rd = new Random();
-        return (char) ((char) rd.nextInt(126 - 32 + 1) + 32);
+        int choice = rd.nextInt(3);
+        switch (choice) {
+            case 0:
+                return getRandomLowerCaseLetter();
+            case 1:
+                return getRandomUpperCaseLetter();
+            case 2:
+                return getRandomDigitCharacter();
+            default:
+                return ' ';
+        }
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String str;
-
-        System.out.println("Nhập vào giới hạn trái: ");
-        str = sc.nextLine();
-        char ch1 = str.charAt(0);
-        System.out.println("Nhập vào giới hạn phải: ");
-        str = sc.nextLine();
-        char ch2 = str.charAt(0);
-        System.out.print("Đây là kí tự ngẫu nhiên trong khoảng cho trước: ");
-        System.out.println(getRandomCharacter(ch1, ch2));
-
-        System.out.print("\nĐây là kí tự viết thường ngẫu nhiên: ");
-        System.out.println(getRandomLowerCaseLetter());
-
-        System.out.print("\nĐây là kí tự viết hoa ngẫu nhiên: ");
-        System.out.println(getRandomUpperCaseLetter());
-
-        System.out.print("\nĐây là kí tự số ngẫu nhiên: ");
-        System.out.println(getRandomDigitCharacter());
-
-        System.out.print("\nĐây là kí tự ngẫu nhiên được tạo: ");
-        System.out.println(getRandomCharacter());
-        sc.close();
+        // tạo 175 ký tự thường ngẫu nhiên và in ra màn hình, mỗi hàng 25 ký tự.
+        int count = 0;
+        for (int i = 0; i < 175; i++) {
+            System.out.print(getRandomLowerCaseLetter() + " ");
+            count++;
+            if (count == 25) {
+                System.out.println();
+                count = 0;
+            }
+        }
     }
 }
