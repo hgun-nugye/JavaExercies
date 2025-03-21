@@ -2,8 +2,8 @@ import java.util.Scanner;
 import java.util.Vector;
 
 public class Cau7_PhoneBookVector {
-    private Vector<String> names;
-    private Vector<Integer> nums;
+    private final Vector<String> names;
+    private final Vector<Integer> nums;
 
     public Cau7_PhoneBookVector() {
         names = new Vector<>();
@@ -64,7 +64,7 @@ public class Cau7_PhoneBookVector {
         Cau7_PhoneBookVector phoneBook = new Cau7_PhoneBookVector();
         int click = -1;
 
-        String message= """
+        String message = """
                 Click 1 to add a new phone
                 Click 2 to find a phone
                 Click 3 to change a number
